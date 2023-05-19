@@ -1,0 +1,6 @@
+class_1{
+   function void main() {
+      do Output.printString("Hello world!");
+      return;
+   }
+}
