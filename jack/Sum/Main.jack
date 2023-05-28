@@ -4,8 +4,8 @@ class Main{
         var int b;
         var int c;
 
-        let a = 9;
-        let b = 1;
+        let a = Keyboard.readInt("ENter a:");
+        let b = Keyboard.readInt("ENter a:");
         let c = a+b;
         do Output.printInt(c);
         return;

@@ -1,0 +1,19 @@
+class Main {
+    function void main() {
+        var int n;
+        var int res;
+
+        let n = Keyboard.readInt("Enter the n: ");
+        let res = Main.sum(n);
+        do Output.printString("The sum of number until n is ");
+        do Output.printInt(res);
+        return;
+    }
+
+    function int sum(int n) {
+        if (n = 1) { 
+            return 1;
+        }
+        return Main.sum(n - 1) + n;
+    }
+}
