@@ -1,0 +1,13 @@
+class Main{
+    function void main (){
+        var int a;
+        var int b;
+        var int c;
+
+        let a = 9;
+        let b = 1;
+        let c = a+b;
+        do Output.printInt(c);
+        return;
+    }
+}

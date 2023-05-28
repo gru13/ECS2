@@ -1,4 +1,6 @@
-function _1.main 0
+function _1.main 1
+push constant 99
+pop local 0
 push constant 12
 call String.new 1
 push constant 72
