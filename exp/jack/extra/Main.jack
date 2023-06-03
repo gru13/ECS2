@@ -1,0 +1,15 @@
+class Main{
+    function int fact(int n){
+        if(~n){
+            return 1;
+        }
+        return Math.multiply(n,Main.fact(n-1));
+    }
+    function void main() {
+      var int g;
+      var int f;
+      let g = 3;
+      let f = Main.fact(g);
+      return;
+   }
+}
