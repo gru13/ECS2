@@ -1,0 +1,24 @@
+class Main {
+    function void main () {
+        var int a; 
+        var int b; 
+        var int c;
+
+        let a  = Keyboard.readInt("Enter a :"); 
+        let b  = Keyboard.readInt("Enter b :"); 
+        let c  = Main.mul(a,b);
+
+        do Output.printString("The product of both = ");
+        do Output.printInt(c);
+
+        return;
+    }
+
+    function int mul(int a, int b){
+        if(b=0){
+            return 0;
+        }else{
+            return a + Main.mul(a,b-1);
+        }
+    }
+}

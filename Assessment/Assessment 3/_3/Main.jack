@@ -1,0 +1,48 @@
+class Main {
+
+    function void main() {
+        var Array arr;
+        var int len;
+        var int key;
+        var int i;
+        var int result;
+
+        let len = Keyboard.readInt("Enter the length of the array: ");
+        let arr = Array.new(len);
+        let i = 0;
+        while (i < len) {
+            let arr[i] = Keyboard.readInt("Enter element: ");
+            let i = i + 1;
+        }
+
+        let key = Keyboard.readInt("Enter the element to search: ");
+
+        let result = Main.binary_search(arr, key, 0,len-1);
+    
+
+        if (result = -1) {
+            do Output.printString("Element not found.\n");
+        } else {
+            do Output.printString("Element found at index ");
+            do Output.printInt(result);
+            do Output.printString("\n");
+        }
+        return;
+    }
+    function int binary_search(Array arr, int key,int low,int high){
+        var int mid;
+        if(low > high){
+            return -1;
+        }
+        let mid = (low + high) / 2;
+        if (arr[mid] = key) {
+            return mid;
+        } else {
+            if (arr[mid] < key) {
+            return Main.binary_search(arr, key, mid + 1, high);
+            } else {
+            return Main.binary_search(arr, key, low, mid - 1);
+            }
+        }
+    }
+}

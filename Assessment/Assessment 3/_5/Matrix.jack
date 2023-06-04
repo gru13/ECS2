@@ -1,0 +1,20 @@
+class Matrix {
+    field int rows;
+    field int cols;
+    field Array mat;
+
+    constructor Matrix new(int r, int c) {
+        let rows = r;
+        let cols = c;
+        let mat = Array.new(r * c);
+        return this;
+    }
+
+    method int getRows() {
+        return rows;
+    }
+
+    method int getCols() {
+        return cols;
+    }
+}

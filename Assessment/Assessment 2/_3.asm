@@ -1,8 +1,8 @@
-@1
+@1//STARTING INDEX
 D=M
 @i
 M=D
-@2
+@2//LENGTH
 D=M
 @len
 M=D
