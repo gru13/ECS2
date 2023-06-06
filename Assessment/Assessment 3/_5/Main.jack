@@ -1,0 +1,14 @@
+class Main {
+    
+    function void main() {
+        var Matrix a;
+        var Matrix b;
+        let a = Matrix.new(2, 2);
+        let b = Matrix.new(2, 2);
+        do Output.printInt(a.getRows());
+        do Output.println();
+        do Memory.deAlloc(a);
+        do Memory.deAlloc(b);
+        return;
+    }
+}

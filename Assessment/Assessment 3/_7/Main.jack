@@ -1,0 +1,22 @@
+class Main {
+    function void main() {
+        var int a;
+        var int res;
+
+        let a = Keyboard.readInt("Enter the n-th Fibonacci number: ");
+        let res = Main.fib(a);
+        do Output.printString("The n-th Fibonacci number is ");
+        do Output.printInt(res);
+        return;
+    }
+
+    function int fib(int n) {
+        if (n = 0) { 
+            return 0;
+        }
+        if (n = 1) { 
+            return 1;
+        }
+        return Main.fib(n - 1) + Main.fib(n - 2);
+    }
+}

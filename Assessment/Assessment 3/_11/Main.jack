@@ -1,0 +1,47 @@
+class Main {
+    function void main () {
+        var int len;
+        var Array arr;
+        var int temp;
+        var int temp1;
+        var int temp2;
+        var int i;
+        var int j;
+
+        let i = 0;
+        let j = 0;
+        let len = Keyboard.readInt("Enter the size od array : ");
+        let arr = Array.new(len);
+        do Output.printInt(len);
+        while(~(i=len)){
+            let arr[i] = Keyboard.readInt("Enter element : ");
+            let i = i + 1;
+        }
+        let i = 0;
+        let temp1 = len - 1;
+        while(~(i=temp1)){
+            let j = 0;
+            let temp2 = len - i - 1; 
+            while((j < temp2)){
+                if(arr[j] > arr[j+1]){
+                    let temp = arr[j];
+                    let arr[j] = arr[j+1];
+                    let arr[j+1] = temp;
+                }
+                let j = j + 1;
+                let temp2 = len - i - 1; 
+            }
+            let i = i + 1;
+        }
+        let i = 0;
+        do Output.printString("The sorted array : ");
+        do Output.println();
+        while(i<len){
+            do Output.printInt(arr[i]);
+            do Output.printString(", ");
+            let i = i + 1;  
+        }
+        do Output.println();
+        return;
+    }
+}
