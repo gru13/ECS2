@@ -7,14 +7,84 @@ class Matrix {
         let rows = r;
         let cols = c;
         let mat = Array.new(r * c);
+        
         return this;
+    }
+    method void ones(){
+        var int i;
+        let i = rows*cols;
+        while(~(i=-1)){
+            let mat[i] = 1;
+            let i = i - 1;
+        }
+        return;
+    }
+    method void zero(){
+        var int i;
+        let i = rows*cols;
+        while(~(i=-1)){
+            let mat[i] = 0;
+            let i = i - 1;
+        }
+        return;
+    }
+    method void add(Matrix b){
+        var int i;
+        let i = rows*cols-1;
+        while(~(i=-1)){
+            let mat[i] = mat[i] + b.index(i);
+            let i = i - 1;
+        }
+        return;
+    }
+    method void sub(Matrix b){
+        var int i;
+        let i = rows*cols-1;
+        while(~(i=-1)){
+            let mat[i] = mat[i] - b.index(i);
+            let i = i - 1;
+        }
+        return;
     }
 
     method int getRows() {
         return rows;
     }
 
+    method int index(int i){
+        return mat[i];
+    }
     method int getCols() {
         return cols;
+        
+    }
+    method void set(int r, int c,int val){
+        if (~(r < 0) & r < rows & ~(c < 0) & c < cols) {
+            let mat[(r * cols) + c] = val;  // Set the value at the specified row and column in the matrix
+        }
+        return;
+    }
+    method void display(){
+        var int i;
+        var int o;
+        var int len;
+        let len = rows*cols;
+        let i = 0;
+        let o = cols;
+        do Output.println();
+        do Output.println();
+        while(i<len){
+            if(o = 0){
+                let o = cols;
+                do Output.println();
+            }
+            do Output.printInt(mat[i]);
+            do Output.printString(" ");
+            let i = i + 1;
+            let o = o - 1;
+        }
+        do Output.println();
+        do Output.println();
+        return;
     }
 }

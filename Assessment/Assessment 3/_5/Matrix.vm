@@ -13,13 +13,265 @@ call Array.new 1
 pop this 2
 push pointer 0
 return
+function Matrix.ones 1
+push argument 0
+pop pointer 0
+push this 0
+push this 1
+call Math.multiply 2
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 1
+neg
+eq
+not
+not
+if-goto WHILE_END0
+push local 0
+push this 2
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Matrix.zero 1
+push argument 0
+pop pointer 0
+push this 0
+push this 1
+call Math.multiply 2
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 1
+neg
+eq
+not
+not
+if-goto WHILE_END0
+push local 0
+push this 2
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Matrix.add 1
+push argument 0
+pop pointer 0
+push this 0
+push this 1
+call Math.multiply 2
+push constant 1
+sub
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 1
+neg
+eq
+not
+not
+if-goto WHILE_END0
+push local 0
+push this 2
+add
+push local 0
+push this 2
+add
+pop pointer 1
+push that 0
+push argument 1
+push local 0
+call Matrix.index 2
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Matrix.sub 1
+push argument 0
+pop pointer 0
+push this 0
+push this 1
+call Math.multiply 2
+push constant 1
+sub
+pop local 0
+label WHILE_EXP0
+push local 0
+push constant 1
+neg
+eq
+not
+not
+if-goto WHILE_END0
+push local 0
+push this 2
+add
+push local 0
+push this 2
+add
+pop pointer 1
+push that 0
+push argument 1
+push local 0
+call Matrix.index 2
+sub
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
 function Matrix.getRows 0
 push argument 0
 pop pointer 0
 push this 0
 return
+function Matrix.index 0
+push argument 0
+pop pointer 0
+push argument 1
+push this 2
+add
+pop pointer 1
+push that 0
+return
 function Matrix.getCols 0
 push argument 0
 pop pointer 0
 push this 1
+return
+function Matrix.set 0
+push argument 0
+pop pointer 0
+push argument 1
+push constant 0
+lt
+not
+push argument 1
+and
+push this 0
+lt
+push argument 2
+push constant 0
+lt
+not
+and
+push argument 2
+and
+push this 1
+lt
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 1
+push this 1
+call Math.multiply 2
+push argument 2
+add
+push this 2
+add
+push argument 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE0
+push constant 0
+return
+function Matrix.display 3
+push argument 0
+pop pointer 0
+push this 0
+push this 1
+call Math.multiply 2
+pop local 2
+push constant 0
+pop local 0
+push this 1
+pop local 1
+call Output.println 0
+pop temp 0
+call Output.println 0
+pop temp 0
+label WHILE_EXP0
+push local 0
+push local 2
+lt
+not
+if-goto WHILE_END0
+push local 1
+push constant 0
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 1
+pop local 1
+call Output.println 0
+pop temp 0
+label IF_FALSE0
+push local 0
+push this 2
+add
+pop pointer 1
+push that 0
+call Output.printInt 1
+pop temp 0
+push constant 1
+call String.new 1
+push constant 32
+call String.appendChar 2
+call Output.printString 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+push local 1
+push constant 1
+sub
+pop local 1
+goto WHILE_EXP0
+label WHILE_END0
+call Output.println 0
+pop temp 0
+call Output.println 0
+pop temp 0
+push constant 0
 return

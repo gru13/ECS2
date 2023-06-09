@@ -1,0 +1,22 @@
+class Main{
+    field int j;
+    function void main () {
+        var int a;
+        var int b;
+        var int c;
+        var int d;
+
+        let a = 10;
+        let b = 1;
+        if(a<b){
+            let c = a + b;
+        }else{
+            let c = a - b;
+        }
+
+
+
+        return;
+    }
+
+}

@@ -6,6 +6,7 @@ class Main{
         let a = Keyboard.readInt("Enter a:");
         let b = Keyboard.readInt("Enter b:");
         let c = a + b;
+        do Output.printString("The Sum of a and b  :");
         do Output.printInt(c);
         return;
     }

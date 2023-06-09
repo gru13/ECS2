@@ -3,12 +3,33 @@ class Main {
     function void main() {
         var Matrix a;
         var Matrix b;
+        var Matrix c;
+
         let a = Matrix.new(2, 2);
         let b = Matrix.new(2, 2);
-        do Output.printInt(a.getRows());
+        let c = Matrix.new(2, 2);
+        
+        do a.set(0,0,1);
+        do a.set(0,1,2);
+        do a.set(1,0,3);
+        do a.set(1,1,4);
+        do Output.printString("THE MATRIX A:");
         do Output.println();
-        do Memory.deAlloc(a);
-        do Memory.deAlloc(b);
+        do a.display();
+        
+        do b.ones();//setting the every value  to in the matrix
+        do Output.printString("THE MATRIX B:");
+        do Output.println();
+        do b.display();
+        
+        do c.zero();
+        do c.add(a);
+        do c.add(b);
+        do Output.printString("C = A + B");
+        do Output.println();
+        do Output.printString("THE MATRIX C:");
+        do Output.println();
+        do c.display();
         return;
     }
 }

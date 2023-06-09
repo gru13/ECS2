@@ -1,0 +1,65 @@
+class Student{
+    field int math; 
+    field int sci; 
+    field int eng; 
+    field int cs; 
+    field int sc; 
+    constructor Student new(int maths, int science, int english, int computer_science,int social){
+        let sci = science;
+        let math = maths;
+        let eng = english;
+        let cs = computer_science;
+        let sc = social;
+        return this;
+    }
+
+    method int  getMath () {
+        return math;
+    }
+    method int  getScience () {
+        return sci;
+    }
+    method int  getEnglish () {
+        return eng;
+    }
+    method int  getSocial () {
+        return sc;
+    }
+    method int  getComputerScience () {
+        return math;
+    }
+
+    method int totalMark(){
+        return math+sc+sci+eng+cs;
+    }
+
+    method  int percentage(){
+        return totalMark()/5;
+    }
+    method void display(){
+        do Output.println();
+        do Output.printString("------------------------------------");
+        do Output.println();
+        do Output.printString("ENGLISH : ");
+        do Output.printInt(eng);
+        do Output.println();
+        do Output.printString("Maths : ");
+        do Output.printInt(math);
+        do Output.println();
+        do Output.printString("Science : ");
+        do Output.printInt(sci);
+        do Output.println();
+        do Output.printString("Social : ");
+        do Output.printInt(sc);
+        do Output.println();
+        do Output.printString("Computer Science : ");
+        do Output.printInt(cs);
+        do Output.println();
+        do Output.printString("Percentage: ");
+        do Output.printInt(percentage());
+        do Output.println();
+        do Output.printString("------------------------------------");
+        do Output.println();
+        return;
+    }
+}

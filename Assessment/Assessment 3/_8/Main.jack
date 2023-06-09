@@ -1,0 +1,22 @@
+class Main {
+    
+    function void main() {
+        var Student st;
+        var int sci;
+        var int sc;
+        var int eng;
+        var int maths;
+        var int cs;
+
+        let sci = Keyboard.readInt("Enter the science mark : ");
+        let maths = Keyboard.readInt("Enter the Maths mark : ");
+        let eng = Keyboard.readInt("Enter the English mark : ");
+        let sc = Keyboard.readInt("Enter the Social science mark : ");
+        let cs = Keyboard.readInt("Enter the computer science mark : ");
+
+        let st = Student.new(maths, sci, eng, cs,sc);
+        do st.display();
+
+        return;
+    }
+}
