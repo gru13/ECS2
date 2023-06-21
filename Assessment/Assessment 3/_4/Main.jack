@@ -4,14 +4,14 @@ class Main {
         var int b; 
         var int c;
 
-        let a  = Keyboard.readInt("Enter a :"); 
-        let b  = Keyboard.readInt("Enter b :"); 
+        let a =10;
+        let b =10;
         let c  = Main.mul(a,b);
 
-        do Output.printString("The product of both = ");
+        // do Output.printString("The product of both = ");
         do Output.printInt(c);
 
-        return;
+        return; 
     }
 
     function int mul(int a, int b){

@@ -1,0 +1,21 @@
+class Main{
+    function void main(){
+        var int a;
+        var int b;
+        var int c;
+        // var int d;
+
+        let a = 9;
+        let b = 8;
+        let c = a + b;
+
+        // let c = Main.mult(a,b,a);
+        
+        return;
+    }
+
+    // function int mult(int a,int b,int c){
+    //     return a*b*c;
+    // }
+
+}

@@ -1,0 +1,14 @@
+function Main.main 3
+
+push 9
+pop a
+
+push 8
+pop b
+
+push a
+push b
+add
+pop c
+
+return
