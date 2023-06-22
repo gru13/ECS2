@@ -1,43 +1,33 @@
-@KBD
-D = A-1 
-@pxl 
-M = D
+(SET)
+    @8192
+    D = A
+    @pxl
+    M = D
 (LOOP)
     @pxl
+    M = M - 1
     D = M
-    @SCREEN
-    D = D - A
     @SET
     D;JLT
-    (CONTINUE_SET)
     @KBD
-    D = M 
-    @BLACK
-    D;JGT
+    D = M
     @WHITE
+    D;JEQ
+    @BLACK
     0;JMP
-    (CONTINUE_BLACK_WHITE)
+(WHITE)
+    @SCREEN
+    D = A
     @pxl
-    M = M - 1
+    A = M + D
+    M = 0
     @LOOP
     0;JMP
 (BLACK)
-    @pxl 
-    A = M
-    M = -1
-    @CONTINUE_BLACK_WHITE
-    0;JMP
-(WHITE)
+    @SCREEN
+    D = A
     @pxl
-    A = M
-    M = 0
-    @CONTINUE_BLACK_WHITE
+    A = M + D
+    M = -1
+    @LOOP
     0;JMP
-(SET)
-    @KBD
-    D = A-1 
-    @pxl 
-    M = D
-    @CONTINUE_SET
-    0;JMP
-

@@ -1,41 +1,40 @@
-// input len in 1
-// starting index in 2
-// value in 3
-
-@1
-D = M
+//
+@10
+D = A
 @len
 M = D
 
-@2
-D = M 
-@i 
+@23
+D = A
+@val 
 M = D
 
-@3
-D = M
-@value
+@40
+D = A
+@i
 M = D
 
 (LOOP)
     @len
+    D = M 
+    @END
+    D;JLT
+
+    @val
     D = M
-    @IF
-    D;JGT
-    @EXIT
-    0;JMP
-(IF)
-    @len 
-    M = M - 1
-    @value 
-    D = M
-    @i
+    
+    @i 
     A = M
     M = D
     @i
     M = M + 1
+    
+    @len
+    M = M - 1
     @LOOP
     0;JMP
-(EXIT)
-    @EXIT
+(END)
+    @END
     0;JMP
+    
+    
