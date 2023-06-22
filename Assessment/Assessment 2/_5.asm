@@ -1,7 +1,11 @@
 // 256* 32 number of 16 bit pixel lines to cover the entire screen/  8192 /16384
 (INIT)
-    @8192
+    // finding total number of pixel
+    @KBD
     D=A
+    @SCREEN
+    D = D - A 
+    D = D - 1 
     @i
     M=D
 
